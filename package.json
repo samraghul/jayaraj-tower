@@ -1,0 +1,24 @@
+{
+  "name": "jayaraj-tower",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samraghul/jayaraj-tower.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samraghul/jayaraj-tower/issues"
+  },
+  "homepage": "https://github.com/samraghul/jayaraj-tower#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}

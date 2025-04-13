@@ -1,0 +1,12 @@
+[
+    {
+      "tower": "Chennai East",
+      "technician": "Arun K.",
+      "phone": "9876543210",
+      "email": "arun@telco.com",
+      "location": {
+        "lat": 13.0827,
+        "lng": 80.2707
+      }
+    }
+  ]
