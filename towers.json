@@ -3,7 +3,6 @@
       "tower": "Sethumadai",
       "technician": "Abdul samadu",
       "phone": "9876543210",
-      "email": "abdul@telco.com",
       "location": {
         "lat": 13.0827,
         "lng": 80.2707
@@ -13,7 +12,6 @@
         "tower": "Valparai Reapeater",
         "technician": "Puviarasu",
         "phone": "9876543210",
-        "email": "arun@telco.com",
         "location": {
           "lat": 13.0827,
           "lng": 80.2707
@@ -23,7 +21,6 @@
         "tower": "Valparai town",
         "technician": "Arun K.",
         "phone": "9876543210",
-        "email": "arun@telco.com",
         "location": {
           "lat": 13.0827,
           "lng": 80.2707
@@ -33,7 +30,6 @@
         "tower": "Madukarai 3",
         "technician": "Ramesh",
         "phone": "9876543210",
-        "email": "arun@telco.com",
         "location": {
           "lat": 13.0827,
           "lng": 80.2707

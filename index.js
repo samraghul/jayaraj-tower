@@ -15,6 +15,14 @@ const fuse = new Fuse(data, {
 // Telegram Bot
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: true });
 
+function cleanPhoneForWhatsApp(phone) {
+    return phone.replace(/[^0-9]/g, ''); // removes +, -, spaces etc.
+  }
+
+  function escapeMarkdown(text) {
+    return text.replace(/([_*[\]()~`>#+=|{}.!\\-])/g, '\\$1');
+  }
+
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
   const input = msg.text.trim();
@@ -22,12 +30,17 @@ bot.on('message', (msg) => {
   const results = fuse.search(input);
 
   if (results.length > 0) {
-    const { tower, technician, phone, email, location } = results[0].item;
+    const { tower, technician, phone, location } = results[0].item;
+    const cleanedPhone = cleanPhoneForWhatsApp(phone);
+const whatsappLink = `https://wa.me/${cleanedPhone}`;
     const mapsLink = `https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`;
-    bot.sendMessage(chatId, `📡 *Tower:* ${tower}
-        👷 *Technician:* ${technician}
+    bot.sendMessage(chatId, `📡 *Tower:* ${escapeMarkdown(tower)}
+        👷 *Technician:* ${escapeMarkdown(technician)}
+        
         📞 *Phone:* [${phone}](tel:${phone})
-        📧 *Email:* ${email}
+        
+        💬 *WhatsApp:* [Chat on WhatsApp](${whatsappLink})
+
         📍 *Location:* [Open in Google Maps](${mapsLink})`, { parse_mode: 'Markdown' });
   } else {
     bot.sendMessage(chatId, "❌ Couldn't find a technician for that tower name.");
